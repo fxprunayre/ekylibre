@@ -1931,6 +1931,7 @@ eng:
       new: "New"
       open: "Open"
       order: "Order"
+      pay: "Pay"
       pick: "Pick"
       picture: "Picture"
       prepare: "Prepare"

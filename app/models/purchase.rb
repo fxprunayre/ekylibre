@@ -265,4 +265,8 @@ class Purchase < Ekylibre::Record::Base
   def can_generate_parcel?
     items.any? && delivery_address && (order? || invoice?)
   end
+
+  def payable?
+    order? && OutgoingPaymentMode.active.sepa.any?
+  end
 end

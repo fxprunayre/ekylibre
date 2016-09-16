@@ -2391,6 +2391,7 @@ fra:
       new: "Nouveau"
       open: "Ouvrir"
       order: "Commander"
+      pay: "Payer"
       pick: "Piocher"
       picture: "Image"
       prepare: "Préparer"
