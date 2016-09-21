@@ -631,6 +631,8 @@ Rails.application.routes.draw do
 
     resources :outgoing_payments, concerns: [:list, :unroll]
 
+    resources :outgoing_payment_lists, only: [:index, :show, :delete, :list, :unroll], concerns: [:list, :unroll]
+
     resources :outgoing_payment_modes, concerns: [:list, :unroll] do
       member do
         post :up

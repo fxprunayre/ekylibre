@@ -1,6 +1,13 @@
 class OutgoingPaymentList < Ekylibre::Record::Base
   has_many :payments, class_name: 'OutgoingPayment', foreign_key: :list_id, inverse_of: :list, dependent: :restrict_with_error
 
+  delegate :name, to: :mode, prefix: true
+  delegate :count, to: :payments, prefix: true
+
+  def mode
+    payments.first.mode
+  end
+
   def self.build_from_purchases(purchases, mode, responsible)
     outgoing_payments = purchases.map do |purchase|
       OutgoingPayment.new(

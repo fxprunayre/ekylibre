@@ -180,8 +180,7 @@ module Backend
       )
 
       if payments_list.save
-        raise
-        redirect_to(params[:redirect] || { action: :index })
+        redirect_to backend_outgoing_payment_lists_path
       else
         raise
         redirect_to(params[:redirect] || { action: :index })
